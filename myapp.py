@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
@@ -11,3 +12,17 @@ st.subheader('Data Science with Tamim')
 # Sidebar
 st.sidebar.header('Upload CSV Data or Use Sample')
 use_example= st.sidebar.checkbox('Use example Dataset')
+
+#Load Dataset
+if use example:
+  df = sns.load_dataset('tips')
+  df = df.dropna()
+  st.success('Loaded simple Dataset:'tips'')
+else:
+  uploaded_file = st.sidebar.file_uploader('Upload your CSV_file',type=['csv'])
+  if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+  else:
+    st.warning('Please upload a csv file or use the example dataset')
+    st.stop()
+    
