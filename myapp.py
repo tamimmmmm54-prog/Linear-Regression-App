@@ -38,7 +38,7 @@ if len(numeric_cols) < 2:
 
 target = st.selectbox('Select Target varible',numeric_cols)
 features = st.multiselect('Select Input Feature Columns',[col for col in numeric_cols if col !=target],default=[col for col in numeric_cols if col !=target])
-if len(reatures) == 0:
+if len(features) == 0:
   st.write('Please Select at least one feature')
   st.stop()
 
