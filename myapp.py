@@ -7,3 +7,6 @@ from sklearn.model_selection import train_test_split
 
 st.title('Linear Regression Web Aplication')
 st.subheader('Data Science with Tamim')
+
+# Sidebar
+st.sidebar.header('Upload csv Data or Use sample')
