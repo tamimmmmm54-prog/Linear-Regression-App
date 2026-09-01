@@ -6,4 +6,4 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
 st.title('Linear Regression Web Aplication')
-st.subheader('Data Scirnce with Tamim')
+st.subheader('Data Science with Tamim')
