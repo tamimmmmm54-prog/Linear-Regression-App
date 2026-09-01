@@ -17,7 +17,7 @@ use_example= st.sidebar.checkbox('Use example Dataset')
 if use_example:
   df = sns.load_dataset('tips')
   df = df.dropna()
-  st.success('Loaded simple Dataset:'tips'')
+  st.success("Loaded simple Dataset:'tips'")
 else:
   uploaded_file = st.sidebar.file_uploader('Upload your CSV_file',type=['csv'])
   if uploaded_file:
