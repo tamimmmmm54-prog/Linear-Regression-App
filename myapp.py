@@ -50,7 +50,7 @@ y = df[target]
 
 scaler = StandardScaler()
 X_scaler = scaler.fit_transform(x)
-xtrain,xtest,ytrain,ytest = train_test_split(X_scaler,y,test_size=0.2,random_stae=42)
+xtrain,xtest,ytrain,ytest = train_test_split(X_scaler,y,test_size=0.2,random_state=42)
 
 model = LinearRegression()
 model.fit(xtrain,ytrain)
