@@ -36,5 +36,5 @@ if len(numeric_cols) < 2:
   st.error('Please at least two numeric columns for regression')
   st.stop()
 
-
+target = st.selectbox('Select Target varible',numeric_cols)
 
