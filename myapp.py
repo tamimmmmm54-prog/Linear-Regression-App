@@ -37,7 +37,7 @@ if len(numeric_cols) < 2:
   st.stop()
 
 target = st.selectbox('Select Target varible',numeric_cols)
-features = st.multiselect('Select Input Feature Columns',[col for col in numeric_cols if col !=target])
+features = st.multiselect('Select Input Feature Columns',[col for col in numeric_cols if col !=target],default=[col for col in numeric_cols if col !=target])
 
 
 
