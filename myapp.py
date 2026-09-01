@@ -5,6 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error,r2_score
 
 st.title('Linear Regression Web Aplication')
 st.subheader('Data Science with Sifat Ahmed Tamim')
@@ -41,5 +43,23 @@ features = st.multiselect('Select Input Feature Columns',[col for col in numeric
 if len(features) == 0:
   st.write('Please Select at least one feature')
   st.stop()
+
+df = df[features + [target]].dropna()
+x = df[features]
+y = df[target]
+
+scaler = StandardScaler()
+X_scaler = scaler.fit_transform(x)
+xtrain,xtest,ytrain,ytest = train_test_split(X_scaler,y,test_size=0.2,random_sate=42)
+
+model = LinearRegression()
+model.fit(xtrain,ytrain)
+y_pred = model.predict(xtest)
+mse = mean_squared_error(ytest,y_pred)
+r2 = r2_score(ytest,y_pred)
+st.subheader('Model evaluation')
+st.write(f'Mean Squared Error:{mse.2f}'})
+st.write(f'R*2 Score:{r2.2f}')
+
 
 
