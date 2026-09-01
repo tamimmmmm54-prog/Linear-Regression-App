@@ -30,3 +30,11 @@ else:
 st.subheader('Dataset Preview')
 st.write(df.head())
     
+# feature selection and model training
+numeric_cols = df.select_dtypes(include=np.number).columns.tolist()
+if len(numeric_cols) < 2:
+  st.error('Please at least two numeric columns for regression')
+  st.stop()
+
+
+
