@@ -74,7 +74,7 @@ for feature in features:
   except ValueError:
     valid_input = False
 
-if st.button('Predict')
+if st.button('Predict'):
   if valid_input:
     input_df = pd.DataFrame([input_data]):
     input_scaled = scaler.transform(input_df)
